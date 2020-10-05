@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="Css/Calc.css">
+    <script src="Script/calc.js"></script>
+</head>
+
+<body>
+    <h2>This is Part 1</h2>
+    Time is : <span id="time"></span></br>
+    <div class='maincontainerCalc'><span id="calcmsg"></span>
+        <input type="text" placeholder="0" onkeypress="return isnumkey(this)" value="" id="txt">
+        <table id="calct">
+            <tr>
+                <td><input type="button" class="numV" onclick="keypress(this)" value="9"></td>
+                <td><input type="button" class="numV" onclick="keypress(this)" value="8"></td>
+                <td><input type="button" class="numV" onclick="keypress(this)" value="7"></td>
+                <td><input type="button" class="eq" onclick="keypress(this)" value="="></td>
+
+            </tr>
+            <tr>
+                <td><input type="button" class="numV" onclick="keypress(this)" value="6"></td>
+                <td><input type="button" class="numV" onclick="keypress(this)" value="5"></td>
+                <td><input type="button" class="numV" onclick="keypress(this)" value="4"></td>
+                <td><input type="button" class="op" onclick="keypress(this)" value="+"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="numV" onclick="keypress(this)" value="3"></td>
+                <td><input type="button" class="numV" onclick="keypress(this)" value="2"></td>
+                <td><input type="button" class="numV" onclick="keypress(this)" value="1"></td>
+                <td><input type="button" class="op" onclick="keypress(this)" value="-"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="clr" onclick="clear1(this)" value="C"></td>
+                <td><input type="button" class="numV" onclick="keypress(this)" value="0"></td>
+                <td><input type="button" class="numV" onclick="keypress(this)" value="."></td>
+                <td><input type="button" class="op" onclick="keypress(this)" value="*"></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <script>
+        function updateClock() {
+            var now = new Date(),
+                months = ['January', 'February', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; // you get the idea
+            let date = isAddZr(now.getDate()) + '/' + months[now.getMonth()] + '/' + now.getFullYear();
+            let time = updateHR((isAddZr(now.getHours()))) + ':' + isAddZr(now.getMinutes()) + ':' + isAddZr(now.getSeconds());
+
+            document.getElementById('time').innerHTML = date + ' ' + time;
+            setTimeout(updateClock, 1000);
+        }
+        const updateHR = (hrval) => {
+            return hrval > 12 ? hrval - 12 : hrval;
+        }
+        const isAddZr = (val) => {
+            return val < 10 ? '0' + val : val;
+        }
+        updateClock();
+    </script>
+</body>
+
+</html>

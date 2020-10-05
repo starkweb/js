@@ -1,0 +1,43 @@
+body {
+    position: relative;
+}
+
+input[type="text"] {
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: right;
+}
+
+.maincontainerCalc {
+    /* position: absolute; */
+    padding: 10px;
+    text-align: center;
+    top: 140%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#calct td {
+    width: 37px;
+    border: 1px solid lightseagreen;
+}
+
+#calct input[type="button"] {
+    border: none;
+    background: none;
+}
+
+#calct input[type="button"]:focus {
+    border: none;
+    background: none;
+}
+
+table td:hover {
+    background: lightseagreen;
+}
+
+#calct td :hover {
+    background: lightseagreen;
+}

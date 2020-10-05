@@ -1,0 +1,53 @@
+.mainContainer {
+    background-color: lightskyblue;
+    height: 40vw;
+    width: 40vw;
+    background-image: url('/clock/AnalogClock.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+
+.hour {
+    background-color: black;
+    height: 30%;
+    width: 8px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translate(-50%, 2%);
+}
+
+.minute {
+    background-color: black;
+    height: 38%;
+    width: 5px;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translate(-50%, 6%);
+}
+
+.second {
+    background-color: black;
+    height: 45%;
+    width: 3px;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translate(-50%, 2%);
+}
+
+.circle {
+    height: 12%;
+    width: 12%;
+    background-color: black;
+    top: 38%;
+    left: 50%;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, 50%);
+}
